@@ -1,4 +1,5 @@
 from typing import List, Tuple, Optional
+import re
 
 from .table import Table
 
@@ -28,8 +29,19 @@ def parse_str_table(data: str, table_with_header: bool = True) -> Table:
         table.fields = extract_values_from_row(unformatted_header)
     else:
         unformatted_body = split_str_table(data, header=False)[1]
-    for line in unformatted_body:
-        table.add_row(extract_values_from_row(line))
+    pattern = re.compile(r'\|')
+    pattern_tail = re.compile(r'\|$')
+    result = pattern.findall(unformatted_body[0])
+    if len(result) > 1:
+        for line in unformatted_body:
+            table.add_row(extract_values_from_row(line))
+    else:
+        final_line = ""
+        for line in unformatted_body:
+            final_line = final_line + line + " "
+            if pattern_tail.search(line):
+                break
+        table.add_row(extract_values_from_row(final_line))
     return table
 
 

@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = 'sttable'
-copyright = '2019, aBulgakoff'
-author = 'aBulgakoff'
+copyright = '2021, Anderson'
+author = 'Anderson'
 
 # The full version, including alpha/beta/rc tags
 release = 'v0.0.1'

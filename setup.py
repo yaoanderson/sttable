@@ -6,15 +6,15 @@ with open('README.rst', encoding='utf-8') as f:
     README = f.read()
 
 setuptools.setup(
-    author="aBulgakoff",
-    author_email="a.p.bulgakoff@gmail.com",
+    author="Anderson.Yao",
+    author_email="359747390@qq.com",
     name='sttable',
     license="MIT",
-    description='Parser of string representation tables',
+    description='Parser of multi-lines string representation tables',
     version='v0.0.1',
     long_description=README,
     long_description_content_type='text/x-rst',
-    url='https://github.com/aBulgakoff/sttable',
+    url='https://github.com/yaoanderson/sttable',
     packages=setuptools.find_packages(),
     python_requires=">=3.7",
     install_requires=[],
